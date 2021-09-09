@@ -46,7 +46,9 @@ const Countries = () => {
       </div>
       <div className="countries-wrapper">
         {countries.map(country => (
-          <CountryCard country={country} key={country.name} />
+          <Link to={country.name}>
+            <CountryCard country={country} key={country.name} />
+          </Link>
         ))}
       </div>
 

@@ -1,6 +1,6 @@
 .countries-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 2rem;
   margin: 4rem 0;
 }
@@ -11,7 +11,8 @@
   cursor: pointer;
   &__img {
     height: 45%;
-    object-fit: cover;
+    height: 130px;
+    object-fit: fill;
   }
   &__infos {
     padding: 1.5rem;

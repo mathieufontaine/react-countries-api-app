@@ -10,19 +10,9 @@ function App() {
       <Header />
       <main className="page-content">
         <Router>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/country">Country</Link>
-              </li>
-            </ul>
-          </nav>
           <Switch>
             <Route path="/" exact component={Countries} />
-            <Route path="/country" component={Country} />
+            <Route path="/:name" component={Country} />
           </Switch>
         </Router>
       </main>
