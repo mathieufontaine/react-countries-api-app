@@ -1,0 +1,31 @@
+.country-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__img {
+    width: 40%;
+  }
+}
+
+.box {
+  width: 50%;
+  padding: 2rem;
+  &__name {
+    font-size: 3rem;
+  }
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0 4rem;
+  }
+  &__text {
+    line-height: 1.8;
+  }
+  &__text--label {
+    font-weight: 800;
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,8 +1,8 @@
 import "./Sass/style.scss";
 import Header from "./Components/Header/Header";
 import Countries from "./Components/HomePage/Countries";
-import Country from "./Components/CountryPage/Country";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Country from "./Components/CountryPage/CountryPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (

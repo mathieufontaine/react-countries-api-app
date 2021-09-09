@@ -35,7 +35,7 @@ const Countries = () => {
           />
         </div>
         <div className="select-form">
-          <select name="select" class="select-form__select">
+          <select name="select" className="select-form__select">
             <option value="Option 1">Africa</option>
             <option value="Option 2">America</option>
             <option value="Option 3">Asia</option>
