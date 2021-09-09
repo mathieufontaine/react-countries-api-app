@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import CountryCard from "./CountryCard";
+import axios from "axios";
 
 const Countries = () => {
-  const [country, setCountries] = useState({
-    id: 1,
-    name: "Germany",
-    population: 80000000,
-    capital: "Berlin"
-  });
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    try {
+      const response = await axios.get("https://restcountries.eu/rest/v2/all");
+      setCountries(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className="container">
@@ -37,28 +45,9 @@ const Countries = () => {
         </div>
       </div>
       <div className="countries-wrapper">
-        {/* {countries.forEach(country => (
-          <CountryCard country={country} key={country.id} />
+        {countries.map(country => (
+          <CountryCard country={country} key={country.name} />
         ))}
-        <p>coucou</p> */}
-        <div className="card">
-          <img className="card__img" alt="country flag" />
-          <div className="card__infos">
-            <h2 className="card__name">{country.name}</h2>
-            <p className="card__text">
-              <span className="card__text--label">Population : </span>
-              {country.population}
-            </p>
-            <p className="card__text">
-              <span className="card__text--label">Region : </span>
-              {country.region}
-            </p>
-            <p className="card__text">
-              <span className="card__text--label">Capital : </span>
-              {country.capital}
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* <button><Link to="/country">Country</Link></button> */}

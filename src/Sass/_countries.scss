@@ -8,11 +8,16 @@
 .card {
   border-radius: 4px;
   background: $dark-elements-color;
+  cursor: pointer;
+  &__img {
+    height: 45%;
+    object-fit: cover;
+  }
   &__infos {
-    padding: 2rem;
+    padding: 1.5rem;
   }
   &__name {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
   }
   &__text--label {
     font-weight: 800;
