@@ -1,7 +1,7 @@
 import "./Sass/style.scss";
 import Header from "./Components/Header/Header";
-import HomePage from "./Components/HomePage/HomePage";
-import CountryPage from "./Components/CountryPage/CountryPage";
+import Countries from "./Components/HomePage/Countries";
+import Country from "./Components/CountryPage/Country";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
             </ul>
           </nav>
           <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/country" component={CountryPage} />
+            <Route path="/" exact component={Countries} />
+            <Route path="/country" component={Country} />
           </Switch>
         </Router>
       </main>

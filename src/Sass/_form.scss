@@ -1,0 +1,51 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-form {
+  background: $dark-elements-color;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  width: 400px;
+  &__input {
+    margin-left: 12px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $dark-text-color;
+  }
+}
+
+.select-form__select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+
+  appearance: none;
+  margin: 0;
+  outline: none;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 2rem;
+  cursor: pointer;
+  background-color: $dark-elements-color;
+  color: $dark-text-color;
+  &::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Pro";
+    color: $dark-text-color;
+    display: inline-block;
+
+    grid-area: select;
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    // background-color: $dark-text-color;
+    // clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}

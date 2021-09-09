@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CountryPage = () => {
+const Country = () => {
   return (
     <div className="container">
       <p>Country Page Content</p>
@@ -10,4 +10,4 @@ const CountryPage = () => {
   );
 };
 
-export default CountryPage;
+export default Country;
