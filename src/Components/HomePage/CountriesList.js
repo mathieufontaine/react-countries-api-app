@@ -6,6 +6,7 @@ import CountryCard from "./CountryCard";
 import axios from "axios";
 
 const Countries = () => {
+  const [loading, setLoading] = useState(false);
   const [allCountries, setAllCountries] = useState([]);
   const [countries, setCountries] = useState([]);
   const [name, setName] = useState("");
@@ -13,12 +14,30 @@ const Countries = () => {
   const [sorting, setSorting] = useState("AZ");
 
   useEffect(() => {
+    async function getData() {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          "https://restcountries.eu/rest/v2/all"
+        );
+        let i = 0;
+        const countries = response.data.map(country => {
+          i++;
+          return { id: i, ...country };
+        });
+        setAllCountries(countries);
+        setCountries(countries);
+      } catch (error) {
+        console.error(error);
+      }
+      setLoading(false);
+    }
     getData();
   }, []);
 
   useEffect(() => {
     const filterCountriesByName = name => {
-      const filteredCountries = countries.filter(country =>
+      const filteredCountries = allCountries.filter(country =>
         country.name.toLowerCase().startsWith(name.toLowerCase())
       );
       setCountries(filteredCountries);
@@ -64,21 +83,6 @@ const Countries = () => {
     };
     sortCountries(sorting);
   }, [sorting]);
-
-  async function getData() {
-    try {
-      const response = await axios.get("https://restcountries.eu/rest/v2/all");
-      let i = 0;
-      const countries = response.data.map(country => {
-        i++;
-        return { id: i, ...country };
-      });
-      setAllCountries(countries);
-      setCountries(countries);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   const clearFilters = () => {
     setName("");
@@ -137,14 +141,16 @@ const Countries = () => {
         </button>
       </div>
       <div className="countries-wrapper">
-        {countries.length !== 0 ? (
+        {loading === true ? (
+          <p className="message">Loading Countries...</p>
+        ) : countries.length !== 0 ? (
           countries.map(country => (
-            <Link to={country.name}>
-              <CountryCard country={country} key={country.id} />
+            <Link to={country.name} key={country.id}>
+              <CountryCard country={country} />
             </Link>
           ))
         ) : (
-          <p>No country found :/</p>
+          <p className="message">No country found :/</p>
         )}
       </div>
     </div>

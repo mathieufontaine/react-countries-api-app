@@ -43,7 +43,7 @@ const CountryPage = () => {
     <div className="container">
       <Link to="/">
         <button className="button button--back">
-          <i class="fas fa-arrow-left"></i> Back
+          <i className="fas fa-arrow-left"></i> Back
         </button>
       </Link>
       <div className="country-page">
