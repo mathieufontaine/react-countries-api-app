@@ -6,20 +6,51 @@ import CountryCard from "./CountryCard";
 import axios from "axios";
 
 const Countries = () => {
+  const [allCountries, setAllCountries] = useState([]);
   const [countries, setCountries] = useState([]);
+  const [name, setName] = useState("");
+  const [region, setRegion] = useState("");
 
   useEffect(() => {
     getData();
   }, []);
 
+  useEffect(() => {
+    filterCountriesByName(name);
+  }, [name]);
+
+  useEffect(() => {
+    filterCountriesByRegion(region);
+  }, [region]);
+
   async function getData() {
     try {
       const response = await axios.get("https://restcountries.eu/rest/v2/all");
-      setCountries(response.data);
+      let i = 0;
+      const countries = response.data.map(country => {
+        i++;
+        return { id: i, ...country };
+      });
+      setAllCountries(countries);
+      setCountries(countries);
     } catch (error) {
       console.error(error);
     }
   }
+
+  const filterCountriesByName = name => {
+    const filteredCountries = allCountries.filter(country =>
+      country.name.toLowerCase().startsWith(name.toLowerCase())
+    );
+    setCountries(filteredCountries);
+  };
+
+  const filterCountriesByRegion = region => {
+    const filteredCountries = allCountries.filter(
+      country => country.region === region
+    );
+    setCountries(filteredCountries);
+  };
 
   return (
     <div className="container">
@@ -32,27 +63,31 @@ const Countries = () => {
             type="text"
             className="search-form__input"
             placeholder="Search for a country.."
+            value={name}
+            onChange={e => setName(e.target.value)}
           />
         </div>
         <div className="select-form">
-          <select name="select" className="select-form__select">
-            <option value="Option 1">Africa</option>
-            <option value="Option 2">America</option>
-            <option value="Option 3">Asia</option>
-            <option value="Option 4">Europe</option>
-            <option value="Option 5">Oceania</option>
+          <select
+            name="select"
+            className="select-form__select"
+            onChange={e => setRegion(e.target.value)}
+          >
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
           </select>
         </div>
       </div>
       <div className="countries-wrapper">
         {countries.map(country => (
           <Link to={country.name}>
-            <CountryCard country={country} key={country.name} />
+            <CountryCard country={country} key={country.id} />
           </Link>
         ))}
       </div>
-
-      {/* <button><Link to="/country">Country</Link></button> */}
     </div>
   );
 };
