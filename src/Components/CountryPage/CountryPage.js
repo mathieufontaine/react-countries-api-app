@@ -5,19 +5,19 @@ import { Link, useParams } from "react-router-dom";
 const CountryPage = () => {
   const [country, setCountry] = useState("");
 
-  let { name } = useParams();
+  let { code } = useParams();
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [country]);
 
   async function getData() {
     try {
       const response = await axios.get(
-        `https://restcountries.eu/rest/v2/name/${name}`
+        `https://restcountries.eu/rest/v2/alpha/${code}`
       );
-      const infos = response.data[0];
-      // console.log(infos.borders);
+      console.log(response);
+      const infos = response.data;
       infos.currencies = getString(infos.currencies);
       infos.languages = getString(infos.languages);
       setCountry(infos);
@@ -112,7 +112,9 @@ const CountryPage = () => {
             <div className="details-box__items">
               {country.borders &&
                 country.borders.map(border => (
-                  <button className="button">{border}</button>
+                  <Link to={border} key={country.id}>
+                    <button className="button">{border}</button>
+                  </Link>
                 ))}
             </div>
           </div>

@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact component={Countries} />
-            <Route path="/:name" component={Country} />
+            <Route path="/:code" component={Country} />
           </Switch>
         </Router>
       </main>

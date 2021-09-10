@@ -73,8 +73,9 @@ img {
   padding: 1rem 3rem;
   outline: none;
   text-align: center;
+  margin: 1rem;
+  cursor: pointer;
   &--back {
-    cursor: pointer;
     margin: 4rem 0;
     &:hover {
       transform: scale(1.1);
@@ -83,9 +84,8 @@ img {
   &--clear {
     background: $light-element-color;
     color: $light-text-color;
-    cursor: pointer;
     padding: 2.5rem;
-    margin-left: 1rem;
+    margin: 0 0 0 1rem;
     // background-color: black;
   }
 }

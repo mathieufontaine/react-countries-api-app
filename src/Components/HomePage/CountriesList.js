@@ -145,7 +145,7 @@ const Countries = () => {
           <p className="message">Loading Countries...</p>
         ) : countries.length !== 0 ? (
           countries.map(country => (
-            <Link to={country.name} key={country.id}>
+            <Link to={country.alpha3Code} key={country.id}>
               <CountryCard country={country} />
             </Link>
           ))
