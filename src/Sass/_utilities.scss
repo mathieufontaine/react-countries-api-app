@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
+//* default values
+
 $dark-background-color: hsl(207, 26%, 17%);
 $dark-element-color: hsl(209, 23%, 22%);
 $dark-text-color: hsl(0, 0%, 100%);
@@ -8,6 +10,9 @@ $light-background-color: hsl(0, 0%, 98%);
 $light-element-color: hsl(0, 0%, 100%);
 $light-text-color: hsl(200, 15%, 8%);
 $light-input-color: hsl(0, 0%, 52%);
+
+$shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
+$radius: 4px;
 
 *,
 *:before,
@@ -24,7 +29,7 @@ html {
 body {
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
@@ -40,11 +45,11 @@ h2 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   line-height: normal;
 }
@@ -59,20 +64,20 @@ img {
 }
 
 .button {
+  background: $dark-element-color;
+  color: $dark-text-color;
+  border-radius: $radius;
+  box-shadow: $shadow;
   display: inline-block;
   border: 0;
   margin: 0.5rem;
-  background: $dark-element-color;
-  color: $dark-text-color;
-  border-radius: 2px;
   padding: 1rem 3rem;
   outline: none;
   text-align: center;
-}
-
-.button--back {
-  cursor: pointer;
-  margin: 4rem 0;
+  &--back {
+    cursor: pointer;
+    margin: 4rem 0;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -83,9 +88,4 @@ img {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.section {
-  position: relative;
-  padding: 0 20px;
 }

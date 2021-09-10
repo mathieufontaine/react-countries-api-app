@@ -58,7 +58,7 @@ const Countries = () => {
 
   return (
     <div className="container">
-      <div className="flex">
+      <div className="filter-section">
         <div className="search-form">
           <div className="search-form__icon">
             <FontAwesomeIcon icon={faSearch} />

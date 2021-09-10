@@ -55,7 +55,7 @@ const CountryPage = () => {
         <div className="details-box">
           <h1>{country.name}</h1>
           <div className="details-box__infos">
-            <div className="details-box__columns">
+            <div className="details-box__grid">
               <div>
                 <p className="details-box__text">
                   <span className="details-box__text--label">
@@ -85,29 +85,35 @@ const CountryPage = () => {
                 </p>
               </div>
               <div>
-                <p className="box__text">
-                  <span className="box__text--label">Top Level Domain : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">
+                    Top Level Domain :{" "}
+                  </span>
                   {country.topLevelDomain}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Currency : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">Currency : </span>
                   {country.currencies}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Languages : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">Languages : </span>
                   {country.languages}
                 </p>
               </div>
             </div>
           </div>
-          <div className="box__items">
-            <p className="box__text">
-              <span className="box__text--label">Borders Countries: </span>
+          <div>
+            <p className="details-box__text">
+              <span className="details-box__text--label">
+                Borders Countries:{" "}
+              </span>
             </p>
-            {country.borders &&
-              country.borders.map(border => (
-                <button className="button">{border}</button>
-              ))}
+            <div className="details-box__items">
+              {country.borders &&
+                country.borders.map(border => (
+                  <button className="button">{border}</button>
+                ))}
+            </div>
           </div>
         </div>
       </div>

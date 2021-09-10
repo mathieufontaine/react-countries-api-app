@@ -1,0 +1,40 @@
+@media (max-width: 700px) {
+  html {
+    font-size: 8px;
+  }
+  .container {
+    width: 90%;
+  }
+  .filter-section {
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  .search-form,
+  .select-form {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .countries-wrapper {
+    margin: 4rem;
+  }
+  .country-page {
+    flex-direction: column;
+    &__img {
+      width: 100%;
+    }
+    .details-box {
+      width: 100%;
+      margin: 4rem 0;
+      &__grid {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+      }
+      &__text {
+        line-height: 2.5;
+      }
+      &__items .details-box__text {
+        display: block;
+      }
+    }
+  }
+}

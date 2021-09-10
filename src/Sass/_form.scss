@@ -1,4 +1,4 @@
-.flex {
+.filter-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,11 +8,11 @@
 .search-form {
   background: $dark-element-color;
   color: $dark-text-color;
-
+  box-shadow: $shadow;
+  border-radius: $radius;
   padding: 2rem;
   display: flex;
   align-items: center;
-  border-radius: 4px;
   width: 400px;
   &__input {
     margin-left: 12px;
@@ -27,6 +27,8 @@
 .select-form {
   background-color: $dark-element-color;
   color: $dark-text-color;
+  border-radius: $radius;
+  box-shadow: $shadow;
   width: 20%;
   position: relative;
   &__icon {
@@ -42,7 +44,6 @@
     margin: 0;
     outline: none;
     border: none;
-    border-radius: 4px;
     background: none;
     color: inherit;
     z-index: 2;
