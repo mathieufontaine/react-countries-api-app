@@ -1,5 +1,4 @@
 import React from "react";
-import { setTheUsername } from "whatwg-url";
 
 const Header = ({ darkMode, setDarkMode }) => {
   return (

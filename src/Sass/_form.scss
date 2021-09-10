@@ -1,16 +1,17 @@
 .filter-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 4rem;
 }
 
 .search-form {
+  margin-right: auto;
   background: $dark-element-color;
   color: $dark-text-color;
   box-shadow: $shadow;
   border-radius: $radius;
-  padding: 2rem;
+  padding: 2.2rem;
   display: flex;
   align-items: center;
   width: 400px;
@@ -21,6 +22,9 @@
     outline: none;
     width: 100%;
     color: inherit;
+    &::placeholder {
+      color: $dark-text-color;
+    }
   }
 }
 
@@ -29,8 +33,9 @@
   color: $dark-text-color;
   border-radius: $radius;
   box-shadow: $shadow;
-  width: 20%;
+  width: 15%;
   position: relative;
+  margin: 0 1rem;
   &__icon {
     position: absolute;
     right: 10%;
@@ -39,7 +44,7 @@
   }
   &__select {
     position: relative;
-    padding: 2rem;
+    padding: 2.5rem;
     width: 100%;
     margin: 0;
     outline: none;

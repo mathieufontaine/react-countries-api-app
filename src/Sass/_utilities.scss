@@ -70,16 +70,23 @@ img {
   box-shadow: $shadow;
   display: inline-block;
   border: 0;
-  margin: 0.5rem;
   padding: 1rem 3rem;
   outline: none;
   text-align: center;
   &--back {
     cursor: pointer;
     margin: 4rem 0;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
-  &:hover {
-    transform: scale(1.1);
+  &--clear {
+    background: $light-element-color;
+    color: $light-text-color;
+    cursor: pointer;
+    padding: 2.5rem;
+    margin-left: 1rem;
+    // background-color: black;
   }
 }
 

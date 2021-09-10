@@ -41,11 +41,11 @@ const CountryPage = () => {
 
   return (
     <div className="container">
-      <button className="button button--back">
-        <Link to="/">
+      <Link to="/">
+        <button className="button button--back">
           <i class="fas fa-arrow-left"></i> Back
-        </Link>
-      </button>
+        </button>
+      </Link>
       <div className="country-page">
         <img
           src={country.flag}
@@ -67,7 +67,8 @@ const CountryPage = () => {
                   <span className="details-box__text--label">
                     Population :{" "}
                   </span>
-                  {country.population}
+                  {country.population &&
+                    country.population.toLocaleString("en-US")}
                 </p>
                 <p className="details-box__text">
                   <span className="details-box__text--label">Region : </span>

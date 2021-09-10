@@ -1,6 +1,6 @@
 import "./Sass/style.scss";
 import Header from "./Components/Header/Header";
-import Countries from "./Components/HomePage/Countries";
+import Countries from "./Components/HomePage/CountriesList";
 import Country from "./Components/CountryPage/CountryPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";

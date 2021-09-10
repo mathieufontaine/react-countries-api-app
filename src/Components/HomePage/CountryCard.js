@@ -8,7 +8,7 @@ const CountryCard = ({ country }) => {
         <h2 className="card__name">{country.name}</h2>
         <p className="card__text">
           <span className="card__text--label">Population : </span>
-          {country.population}
+          {country.population.toLocaleString("en-US")}
         </p>
         <p className="card__text">
           <span className="card__text--label">Region : </span>

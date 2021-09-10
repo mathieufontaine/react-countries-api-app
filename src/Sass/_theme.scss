@@ -15,7 +15,12 @@
     background: $light-element-color;
     color: $light-text-color;
   }
-  a {
+  .button--clear {
+    background: $dark-element-color;
+    color: $dark-text-color;
+  }
+  a,
+  .search-form__input::placeholder {
     color: $light-text-color;
   }
 }
