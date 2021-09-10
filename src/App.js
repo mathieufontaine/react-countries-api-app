@@ -3,11 +3,14 @@ import Header from "./Components/Header/Header";
 import Countries from "./Components/HomePage/Countries";
 import Country from "./Components/CountryPage/CountryPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <div className="App">
-      <Header />
+    <div className={`App ${!darkMode ? "lightMode" : ""}`}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="page-content">
         <Router>
           <Switch>

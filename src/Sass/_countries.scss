@@ -6,13 +6,13 @@
 }
 
 .card {
-  background: $dark-elements-color;
+  background: $dark-element-color;
   border-radius: 4px;
+  overflow: hidden;
   cursor: pointer;
   &__img {
-    height: 45%;
     height: 130px;
-    object-fit: fill;
+    object-fit: cover;
   }
   &__infos {
     padding: 1.5rem;
@@ -22,5 +22,10 @@
   }
   &__text--label {
     font-weight: 800;
+  }
+  &:hover {
+    transform: scale(1.05);
+    background: $light-background-color;
+    color: $light-text-color;
   }
 }

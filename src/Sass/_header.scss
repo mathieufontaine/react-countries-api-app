@@ -1,5 +1,25 @@
 .header {
   width: 100%;
-  background: $dark-elements-color;
+  background: $dark-element-color;
   padding: 3rem 0;
+}
+
+.container--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &__icon {
+    transition: 0.5s ease-in-out;
+  }
+  &__text {
+    margin-left: 1rem;
+    font-weight: 600;
+  }
 }

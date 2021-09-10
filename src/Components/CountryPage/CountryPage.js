@@ -42,7 +42,9 @@ const CountryPage = () => {
   return (
     <div className="container">
       <button className="button button--back">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <i class="fas fa-arrow-left"></i> Back
+        </Link>
       </button>
       <div className="country-page">
         <img
@@ -50,29 +52,35 @@ const CountryPage = () => {
           alt={`${country}'s flag`}
           className="country-page__img"
         />
-        <div className="box">
+        <div className="details-box">
           <h1>{country.name}</h1>
-          <div className="box__infos">
-            <div className="box__columns">
+          <div className="details-box__infos">
+            <div className="details-box__columns">
               <div>
-                <p className="box__text">
-                  <span className="box__text--label">Native Name : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">
+                    Native Name :{" "}
+                  </span>
                   {country.nativeName}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Population : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">
+                    Population :{" "}
+                  </span>
                   {country.population}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Region : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">Region : </span>
                   {country.region}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Sub Region : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">
+                    Sub Region :{" "}
+                  </span>
                   {country.subregion}
                 </p>
-                <p className="box__text">
-                  <span className="box__text--label">Capital : </span>
+                <p className="details-box__text">
+                  <span className="details-box__text--label">Capital : </span>
                   {country.capital}
                 </p>
               </div>

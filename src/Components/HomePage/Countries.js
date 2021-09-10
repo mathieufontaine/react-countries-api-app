@@ -46,10 +46,14 @@ const Countries = () => {
   };
 
   const filterCountriesByRegion = region => {
-    const filteredCountries = allCountries.filter(
-      country => country.region === region
-    );
-    setCountries(filteredCountries);
+    if (region === "All") {
+      setCountries(allCountries);
+    } else {
+      const filteredCountries = allCountries.filter(
+        country => country.region === region
+      );
+      setCountries(filteredCountries);
+    }
   };
 
   return (
@@ -73,12 +77,14 @@ const Countries = () => {
             className="select-form__select"
             onChange={e => setRegion(e.target.value)}
           >
+            <option value="All">Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
             <option value="Asia">Asia</option>
             <option value="Europe">Europe</option>
             <option value="Oceania">Oceania</option>
           </select>
+          <i class="select-form__icon fas fa-chevron-down"></i>
         </div>
       </div>
       <div className="countries-wrapper">

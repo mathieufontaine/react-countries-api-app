@@ -1,0 +1,21 @@
+.lightMode {
+  background: $light-background-color;
+  color: $light-text-color;
+  .header,
+  .card {
+    background: $light-element-color;
+  }
+  .card:hover {
+    background: $dark-element-color;
+    color: $dark-text-color;
+  }
+  .search-form,
+  .select-form,
+  .button {
+    background: $light-element-color;
+    color: $light-text-color;
+  }
+  a {
+    color: $light-text-color;
+  }
+}
