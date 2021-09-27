@@ -17,18 +17,17 @@ const Countries = () => {
     async function getData() {
       setLoading(true);
       try {
-        const response = await axios.get(
-          "https://restcountries.eu/rest/v2/all"
-        );
+        const response = await axios.get("https://restcountries.com/v2/all");
         let i = 0;
         const countries = response.data.map(country => {
           i++;
           return { id: i, ...country };
         });
+        console.log(countries);
         setAllCountries(countries);
         setCountries(countries);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
       setLoading(false);
     }
@@ -50,14 +49,15 @@ const Countries = () => {
       if (region === "all") {
         setCountries(allCountries);
       } else {
-        const filteredCountries = countries.filter(
-          country => country.region === region
+        const filteredCountries = allCountries.filter(
+          country => country.continent === region
         );
         setCountries(filteredCountries);
+        setSorting("AZ");
       }
     };
     filterCountriesByRegion(region);
-  }, [region]);
+  }, [region, allCountries]);
 
   useEffect(() => {
     const sortCountries = sorting => {

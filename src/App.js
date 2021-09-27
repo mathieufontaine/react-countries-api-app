@@ -10,15 +10,15 @@ function App() {
 
   return (
     <div className={`App ${!darkMode ? "lightMode" : ""}`}>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="page-content">
-        <Router>
+      <Router>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main className="page-content">
           <Switch>
             <Route path="/" exact component={Countries} />
-            <Route path="/:code" component={Country} />
+            <Route path="/:code" exact component={Country} />
           </Switch>
-        </Router>
-      </main>
+        </main>
+      </Router>
     </div>
   );
 }
